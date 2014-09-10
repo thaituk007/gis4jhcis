@@ -26,7 +26,7 @@ order by villno
 $result = mysql_query($sql);
 $txt = '';
 $txt .= "<p align='center'><br><b><center>แสดงรายชื่อเจ้าหน้าที่และหมู่บ้านรับผิดชอบ</b></p></center>";
-$txt .= "<center><table class='table table-striped'>
+$txt .= "<center><table class='table table-striped table-hover table-bordered'>
   <tr>
     <th width='8%' scope='col'>ลำดับ</th>
     <th width='25%' scope='col'>ชื่อหมู่บ้าน</th>
@@ -68,7 +68,7 @@ order by villno
 $result = mysql_query($sql);
 $txt = '';
 $txt .= "<p align='center'><br><b><center>แสดงรายชื่อเจ้าหน้าที่และหมู่บ้านรับผิดชอบ</b></p></center>";
-$txt .= "<center><table class='table table-striped'>
+$txt .= "<center><table class='table table-striped table-hover table-bordered'>
   <tr>
     <th width='8%' scope='col'>ลำดับ</th>
     <th width='25%' scope='col'>ชื่อหมู่บ้าน</th>

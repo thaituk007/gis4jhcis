@@ -73,14 +73,14 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: '(คน)'
+                    text: '(หลังคาเรือน)'
                 }
             },
             tooltip: {
                 enabled: true,
                 formatter: function() {
                     return '<b>'+ this.series.name +'</b><br/>'+
-                        this.x +': '+ this.y +'ครั้ง';
+                        this.x +': '+ this.y +'หลังคาเรือน';
                 }
             },
 			legend: {
@@ -101,7 +101,7 @@ $(function () {
                 }
             },
 			series: [{
-                                name: 'คน',
+                                name: 'หลังคาเรือน',
                                 data: [<?= implode(',', $couuntofhcode) // ข้อมูล array แกน y ?>]
                             }]
         });

@@ -60,7 +60,7 @@ $imputday = $daysdatestr." - ".$dayend;
 				<section class="sidebar">
                 	<div id="pleft">
         		<?php
-				$txt = "<p align='center'><strong>ข้อมูลระบาดวิทยา</strong></p>";
+				$txt = "<p align='center'><strong>รายงานการคัดกรองภาวะซึมเศร้า</strong></p>";
 				$txt .= "<div class='form-group'>
              				<label>หมู่บ้าน:</label>
                   			<div class='input-group'>

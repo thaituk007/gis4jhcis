@@ -61,7 +61,7 @@ $imputday = $daysdatestr." - ".$dayend;
                 	<div id="pleft">
 				<form role="form">
         		<?php
-				$txt = "<p align='center'><strong>แสดงตำแหน่งบ้าน(หลังคาเรือน)</strong></p>";
+				$txt = "<p align='center'><strong>เลขบัตรประชาชนผิด<br>(คำนวนจาก mod 11)</strong></p>";
 				$txt .= "<div class='form-group'>
              				<label>หมู่บ้าน:</label>
                   			<div class='input-group'>

@@ -27,7 +27,7 @@
                         
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa fa-gear"></i>
                                 <span>เครื่องมือ</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -43,7 +43,7 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa fa-edit "></i>
                                 <span>บันทึก แก้ไข พิกัด</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -75,7 +75,7 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa fa-thumbs-up"></i>
                                 <span>ส่งเสริม</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -87,7 +87,6 @@
                 						<li><a href="../maps/home_visit_chronic.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านผู้ป่วยเรื้อรัง</span></a><li>
                 						<li><a href="../maps/home_visit_disorder.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านผู้พิการ</a></li>
                                         <li><a href="../maps/home_visit_tb.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านผู้ป่วยวัณโรค</a></li>
-                                        <li><a href="../maps/home_visit_tb2.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านวัณโรค2</a></li>
             							<li><a href="../maps/mch.php"><i class="fa fa-angle-double-right"></i> เยี่ยมหญิงหลังคลอด</a></li>
                            			</ul>
                                 </li>
@@ -169,21 +168,17 @@
                                  <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i> วัณโรค</a>
                                 	<ul class="treeview-menu">
                                 		<li><a href="../maps/home_visit_tb.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านวัณโรค</a></li>
-                                        <li><a href="../maps/home_visit_tb2.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านวัณโรค2</a></li>
                            			</ul>
                                 </li>
                                 <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i> มะเร็งตับ</a>
                                 	<ul class="treeview-menu">
-                                		<li><a href="search_ov.php"><i class="fa fa-angle-double-right"></i> บันทึกผลการตรวจstool</a></li>
                     					<li><a href="../maps/stool_ov.php"><i class="fa fa-angle-double-right"></i> รายงานการตรวจstool</a></li>
                     					<li><a href="../maps/home_stool.php"><i class="fa fa-angle-double-right"></i> รายงานผลแบบที่ 2</a></li>
-                    					<li><a href="search_ultra.php"><i class="fa fa-angle-double-right"></i> บันทึกอัลตร้าซาวด์</a></li>
                     					<li><a href="../maps/ultra.php"><i class="fa fa-angle-double-right"></i> รายงานผลอัลตร้าซาวด์</a></li>
                            			</ul>
                                 </li>
                                 <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i> สารเคมีเกษตรกร</a>
                                 	<ul class="treeview-menu">
-                                		<li><a href="search_farmer.php"><i class="fa fa-angle-double-right"></i> บันทึกการตรวจ</a></li>
                     					<li><a href="../maps/farmer.php"><i class="fa fa-angle-double-right"></i> รายงานการตรวจ</a></li>
                            			</ul>
                                 </li>
@@ -191,7 +186,7 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>รักษา</span>
+                                <i class="fa fa-plus-circle"></i> <span>รักษา</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -209,7 +204,7 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-table"></i> <span>ฟื้นฟู</span>
+                                <i class="fa fa-shopping-cart"></i> <span>ฟื้นฟู</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">

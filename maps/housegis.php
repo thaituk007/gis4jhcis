@@ -167,7 +167,7 @@ function getData(){
 			var simg;
 			deleteOverlays();
 			var villcode = document.getElementById('village').value;
-			var url = "../genxml/genxml_gis_cid_else.php?villcode="+villcode;
+			var url = "../genxml/genxml_housegis.php?villcode="+villcode;
 			downloadUrl(url, function(data) {
 				var xml = parseXml(data);
 				var xmldata = xml.documentElement.getElementsByTagName("marker");
@@ -210,8 +210,9 @@ function getData(){
 					map.fitBounds(bounds);
 				}
 		});
-		document.getElementById("csv").innerHTML = "<input type='button' value='ข้อมูล' onclick='getXls();'>";
-		document.getElementById("chart").innerHTML = "<input type='button' value='chart' onclick='getchart();'>";
+		document.getElementById("csv").innerHTML = "<input type='button' value='ข้อมูล' class='btn btn-info' onclick='getXls();'>";
+		document.getElementById("sum").innerHTML = "<input type='button' value='สรุป' class='btn btn-primary' onclick='getsum();'>";
+		document.getElementById("chart").innerHTML = "<input type='button' value='chart' class='btn btn-danger' onclick='getchart();'>";
 }
 
 function downloadUrl(url, callback) {
@@ -280,17 +281,17 @@ function deleteOverlays() {
 	google.maps.event.addDomListener(window, 'load', initialize); 
 function getXls(){
 		var village = document.getElementById('village').value;
-		var url = "../xls/xls_cid_else.php?village="+village;
+		var url = "../xls/xls_housegis.php?village="+village;
 	window.open(url,'data','top=120,left=250,width=700,height=550');
 }
 function getsum(){
 		var village = document.getElementById('village').value;
-		var url = "../sum/sum_cid_else.php?village="+village;
+		var url = "../sum/sum_housegis.php?village="+village;
 	window.open(url,'data','top=120,left=250,width=700,height=550');
 }
 function getchart(){
 		var village = document.getElementById('village').value;
-		var url = "../chart/chart_cid_else.php?village="+village;
+		var url = "../chart/chart_housegis.php?village="+village;
 	window.open(url,'data','top=120,left=250,width=800,height=550');
 }
 </script>

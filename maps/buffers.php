@@ -61,7 +61,7 @@ $imputday = $daysdatestr." - ".$dayend;
 				<section class="sidebar">
                 	<div id="pleft">
         		<?php
-$txt = "<p align='center'><strong>ข้อมูลหลังคาเรือนในเขตพื้นที่</strong></p>";
+$txt = "<p align='center'><strong>รัศมีจากหลังคาเรือน</strong></p>";
 $txt .= "<div class='form-group'>
              				<label>ชนิดพื้นที่ :</label>
                   			<div class='input-group'>
