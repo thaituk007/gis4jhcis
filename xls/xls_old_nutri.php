@@ -1,20 +1,43 @@
 <?php
 session_start();
+set_time_limit(0);
+if($_SESSION[username]){
+include("../includes/conndb.php"); 
+include("../includes/config.inc.php");
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $titleweb; ?></title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../ico/favicon.ico">
+
+    <title><?php echo $titleweb; ?></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery.1.11.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<?php 
-if($_SESSION[username]){
-include("includes/conndb.php"); 
-include("includes/config.inc.php");
+<?php
 $sql = "SELECT
      concat('สถานบริการ(สถานีอนามัย/PCU): ',chospital.`hosname`,' หมู่ที่:',ifnull(chospital.`mu`,'...'),' ต.',
 	ifnull(csubdistrict.`subdistname`,' ...'),' อ.',ifnull(cdistrict.`distname`,' ...'),' จ.',
@@ -52,8 +75,10 @@ if($chk_old == "1"){
 }else{
 	$chksto = "where chk is null";
 }
-$str = retDate($_GET[str]);
-$sto = retDate($_GET[sto]);
+$str = retdaterangstr($_GET[str]);
+$sto = retdaterangsto($_GET[str]);
+$strx = retDatets($str);
+$stox = retDatets($sto);
 $sql = "select *
 from
 (select
@@ -101,19 +126,19 @@ order by tmp_per.pcucodeperson,villcode,fname";
 
 $result = mysql_query($sql);
 $txt = '<p align=\'center\'><b>รายงานการประเมินภาวะโภชนาการผู้สูงอายุ </b><br>';
-$txt .= "<b>ข้อมูลระหว่างวันที่ $_GET[str] ถึง $_GET[sto] หมู่ที่ $mu </b></p><br><b>$hosp</b><table width='98%' border='0' cellspacing='1' cellpadding='1' class='tbhl'>
+$txt .= "<b>ข้อมูลระหว่างวันที่ $strx ถึง $stox  $mu </b></p><br><b>$hosp</b><table width='98%' border='0' cellspacing='1' cellpadding='1' class='table table-striped table-hover table-bordered'>
   <tr>
-    <th width='4%' scope='col'>ลำดับ</th>
-    <th width='13%' scope='col'>ชื่อ - สกุล</th>
-	<th width='8%' scope='col'>ว/ด/ป เกิด</th>
-	<th width='5%' scope='col'>อายุ</th>
-    <th width='7%' scope='col'>บ้านเลขที่</th>
-    <th width='4%' scope='col'>หมู่ที่</th>
-	<th width='4%' scope='col'>วันที่สำรวจ</th>
-	<th width='15%' scope='col'>น้ำหนัก</th>
-	<th width='15%' scope='col'>ส่วนสูง</th>
-	<th width='15%' scope='col'>BMI</th>
-	<th width='15%' scope='col'>สรุปผล</th>
+    <th width='4%' scope='col'><div align='center'>ลำดับ</div></th>
+    <th width='13%' scope='col'><div align='center'>ชื่อ - สกุล</div></th>
+	<th width='8%' scope='col'><div align='center'>ว/ด/ป เกิด</div></th>
+	<th width='5%' scope='col'><div align='center'>อายุ</div></th>
+    <th width='7%' scope='col'><div align='center'>บ้านเลขที่</div></th>
+    <th width='4%' scope='col'><div align='center'>หมู่ที่</div></th>
+	<th width='4%' scope='col'><div align='center'>วันที่สำรวจ</div></th>
+	<th width='15%' scope='col'><div align='center'>น้ำหนัก</div></th>
+	<th width='15%' scope='col'><div align='center'>ส่วนสูง</div></th>
+	<th width='15%' scope='col'><div align='center'>BMI</div></th>
+	<th width='15%' scope='col'><div align='center'>สรุปผล</div></th>
   </tr>";
 while($row=mysql_fetch_array($result)) {
 	$moo = substr($row[villcode],6,2);
@@ -144,7 +169,7 @@ echo $txt;
 <?php
 }
 else{
-		header("Location: login.php");
+		header("Location: ../main/login.php");
 		}
 		?>
         

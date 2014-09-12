@@ -1,7 +1,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="<?=$avatar?>" class="img-circle" alt="User Image" />
+                            <img src="<?=$avatar?>" class="img-circle animated fadeInUp" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello</p><p></p>
@@ -38,7 +38,7 @@
                                 <li><a href="../main/export.php"><i class="fa fa-angle-double-right"></i> ส่งออกพิกัดหลังคาเรือน</a></li>
                                 <li><a href="../main/import.php"><i class="fa fa-angle-double-right"></i> import data</a></li>
                                 <li><a href="../maps/movepoints.php"><i class="fa fa-angle-double-right"></i> move point</a></li>
-                                <li><a href="../main/update_doctor.php"><i class="fa fa-angle-double-right"></i> กำหนดหมู่บ้านรับผิดชอบ</a></li>
+                                <li><a href="../main/index.php?page=update_doctor"><i class="fa fa-angle-double-right"></i> กำหนดหมู่บ้านรับผิดชอบ</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -52,6 +52,9 @@
                                 <li><a href="../maps/markhouse.php"><i class="fa fa-angle-double-right"></i> พิกัดหลังคาเรือน</a></li>
                                 <li><a href="../maps/marktemple.php"><i class="fa fa-angle-double-right"></i> พิกัดศาสนสถาน</a></li>
                                 <li><a href="../maps/markschool.php"><i class="fa fa-angle-double-right"></i> พิกัดโรงเรียน</a></li>
+                                <li><a href="../maps/markwater.php"><i class="fa fa-angle-double-right"></i> พิกัดแหล่งน้ำสาธารณะ</a></li>
+                                <li><a href="../maps/markfoodshop.php"><i class="fa fa-angle-double-right"></i> พิกัดร้านอาหาร</a></li>
+                                <li><a href="../maps/markbusiness.php"><i class="fa fa-angle-double-right"></i> พิกัดสถานประกอบการ</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -113,7 +116,7 @@
                                 		<li><a href="../maps/old_3d.php"><i class="fa fa-angle-double-right"></i> ประเภทผู้สูงอายุ</a></li>
 										<li><a href="../maps/old_health.php"><i class="fa fa-angle-double-right"></i> ผู้สูงอายุพึงประสงค์</a></li>
 										<li><a href="../maps/home_visit_old.php"><i class="fa fa-angle-double-right"></i> เยี่ยมบ้านผู้สูงอายุ</a></li>
-
+										<li><a href="../maps/old_nutri.php"><i class="fa fa-angle-double-right"></i> โภชนาการผู้สูงอายุ</a></li>
                            			</ul>
                                 </li>
                                 <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i> วางแผนครอบครัว</a>

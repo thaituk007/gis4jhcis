@@ -68,8 +68,7 @@ $imputday = $daysdatestr." - ".$dayend;
                    				<div class='input-group-addon'>
 				   				<i class='fa fa-tasks'></i>
 				   				</div>
-				   				<select name='village' class='form-control' id='village' onchange='resetcheckSave(); getData();'>
-								<option value='00000000'>ทุกหมู่บ้าน</option>";
+				   				<select name='village' class='form-control' id='village' onchange='resetcheckSave(); getData();'>";
 						$sql = "SELECT villcode,villno,villname FROM village WHERE villno <> '0' ORDER BY villcode";
 						$result=mysql_query($sql,$link);
 						while($row=mysql_fetch_array($result)) {

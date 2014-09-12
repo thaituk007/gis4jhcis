@@ -9,7 +9,7 @@ if($results){
 		$sqltbl = "ALTER TABLE `user` ADD `avatar` VARCHAR(255) DEFAULT '../img/avatar/53db7dbda4f38.jpg'";
 		$results = mysql_query($sqltbl);
 	}
-$sql = "SELECT menugis.* FROM menugis";
+$sql = "SELECT menugis.dateupdate FROM menugis";
 $results = mysql_query($sql);
 if($results){
 	}else{
@@ -31,7 +31,7 @@ if($results){
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
+		<link href="../css/animatecss/animate.min.css" rel="stylesheet" type="text/css" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -41,7 +41,7 @@ if($results){
     </head>
     <body class="bg-black">
 
-        <div class="form-box" id="login-box">
+        <div class="form-box animated zoomIn" id="login-box">
             <div class="header">Please sign in</div>
             <!--<form class="form-signin" role="form" method='post' action='../main/login_check.php'>-->
                 <div class="body bg-gray">

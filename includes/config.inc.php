@@ -6,7 +6,7 @@ $cuser = getusername($_SESSION[username]);
 $cfuser = getuserfname($_SESSION[username]);
 $clevel = $_SESSION[level];
 $cposition = $_SESSION[position];
-$titleweb = "GIS for JHCIS v3.0.0 beta"; //
+$titleweb = "GIS for JHCIS v3.0.0"; //
 if($_SESSION[username]){
 $headweb2 = $cuser;
 $lmenu = "menutop".$clevel.".php";

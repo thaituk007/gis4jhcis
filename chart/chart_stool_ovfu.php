@@ -1,4 +1,5 @@
 <?php
+set_time_limit(0);
 //We've included ../Includes/FusionCharts.php and ../Includes/DBConn.php, which contains
 //functions to help us easily embed the charts and connect to a database.
 include("includes/FusionCharts.php");

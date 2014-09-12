@@ -1,5 +1,6 @@
 <?php
 session_start();
+set_time_limit(0);
 if($_SESSION[username]){
 include("../includes/conndb.php"); 
 include("../includes/config.inc.php");
@@ -55,7 +56,7 @@ $imputday = $daysdatestr." - ".$dayend;
                 	<div id="pleft">
 <form role="form">
         		<?php
-				$txt = "<p align='center'><strong>แสดงตำแหน่งโรงเรียน</strong></p>";
+				$txt = "<p align='center'><strong>ปิรามิดประชากร</strong></p>";
 				$txt .= "                                    <!-- Date dd/mm/yyyy -->
                                     <div class='form-group'>
                                         <label>Date masks:</label>

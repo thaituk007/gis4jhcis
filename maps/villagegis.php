@@ -61,7 +61,7 @@ $imputday = $daysdatestr." - ".$dayend;
                 	<div id="pleft">
 <form role="form">
         		<?php
-				$txt = "<p align='center'><strong>บันทึก/แก้ไข ตำแหน่งหลังคาเรือน</strong></p>";
+				$txt = "<p align='center'><strong>ตำแหน่งหมู่บ้าน</strong></p>";
 				$txt .= "<div class='form-group'>
              				<label>เลือกหมู่บ้าน:</label>
                   			<div class='input-group'>

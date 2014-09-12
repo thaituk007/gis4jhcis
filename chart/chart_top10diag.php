@@ -1,5 +1,6 @@
 <?php
 session_start();
+set_time_limit(0);
 if($_SESSION[username]){
 include("includes/conndb.php"); 
 include("includes/config.inc.php"); 

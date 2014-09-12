@@ -5,7 +5,7 @@ $avatar = getavatar($_SESSION[username]);
 <header class="header">
             <a href="../main/index.php" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                GIS for JHCIS
+                <div class='animated zoomIn'>GIS for JHCIS</div>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -22,136 +22,115 @@ $avatar = getavatar($_SESSION[username]);
 
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope"></i>
-                                <span class="label label-success">4</span>
+                                <i class="fa fa-list-alt"></i>
+                                <span class="label label-success">5</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
+                                <li class="header">เมนูใหม่</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../img/avatar3.png" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
+                                    <?php
+								include "../includes/function.php";
+								$txtm = '';
+								$txtm .= "";
+								$sqlm = "SELECT menugis.id, menugis.menugroup, menugis.menuname, menugis.menulink, menugis.detail,if(LENGTH(menugis.detail)>= 80,concat(left(menugis.detail,80),'...'),menugis.detail) as detailleft, menugis.mark,menugis.dateupdate FROM menugis ORDER BY menugis.dateupdate DESC LIMIT 5";
+								$resultm=mysql_query($sqlm);
+									while($rowm=mysql_fetch_array($resultm)) {
+										$dateupdate = fb_thaidate(strtotime($rowm[dateupdate]));
+										$txtm .="<li><!-- start message -->";
+										$txtm .=" <a href='$rowm[menulink]'>";
+										$txtm .="<div class='pull-left'>";
+										$txtm .="<img src='../img/new_icon.gif' class='img-circle' alt=''/>";
+										$txtm .="</div>";
+										$txtm .="<h4>";
+										$txtm .="$rowm[menuname]";
+										$txtm .="";
+										$txtm .="</h4>";
+										$txtm .="<p>$rowm[detailleft]</p>";
+										$txtm .="<p><small>$dateupdate <i class='fa fa-clock-o'></i></small></p></a>";
+										$txtm .="</li><!-- end message -->";
+									}
+								echo $txtm;
+								?>
                                     </ul>
                                 </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
+                                <li class="footer"><a href="../main/index.php?page=boxmenu">View all Menu</a></li>
                             </ul>
                         </li>
                         <!-- Notifications: style can be found in dropdown.less -->
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                <span class="label label-warning">10</span>
+                                <i class="fa fa-tasks"></i>
+                                <span class="label label-warning">8</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
+                                <li class="header">เลือกกลุ่มเมนู</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
+                                    	<li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=1">
+                                                <i class="fa fa-users warning"></i> เครื่องมือ
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
+                                            <a href="../main/index.php?page=boxmenu&gmenu=2">
+                                                <i class="ion ion-ios7-cart success"></i> บันทึกพิกัด
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
+                                            <a href="../main/index.php?page=boxmenu&gmenu=3">
+                                                <i class="ion ion-ios7-person danger"></i> ข้อมูลทั่วไป
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=4">
+                                                <i class="ion ion-ios7-people info"></i> ส่งเสริม
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=5">
+                                                <i class="fa fa-warning danger"></i> ป้องกัน ควบคุมโรค
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=6">
+                                                <i class="fa fa-users warning"></i> รักษา
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=7">
+                                                <i class="ion ion-ios7-cart success"></i> ฟื้นฟู
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../main/index.php?page=boxmenu&gmenu=8">
+                                                <i class="ion ion-ios7-person danger"></i> ตรวจสอบเครื่องมือ
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="footer"><a href="#">View all</a></li>
+                                <li class="footer"><a href="../main/index.php?page=boxmenu">View all Menu</a></li>
                             </ul>
                         </li>
                         <!-- Tasks: style can be found in dropdown.less -->
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks"></i>
-                                <span class="label label-danger">9</span>
+                                <i class="fa fa-bars"></i>
+                                <span class="label label-danger">4</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
+                                <li class="header">เมนูแนะนำ</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
                                         <li><!-- Task item -->
-                                            <a href="#">
+                                            <a href="../maps/appmiss.php">
                                                 <h3>
-                                                    Design some buttons
+                                                    รายงานการนัด
                                                     <small class="pull-right">20%</small>
                                                 </h3>
                                                 <div class="progress xs">
@@ -162,9 +141,9 @@ $avatar = getavatar($_SESSION[username]);
                                             </a>
                                         </li><!-- end task item -->
                                         <li><!-- Task item -->
-                                            <a href="#">
+                                            <a href="../maps/epe0.php">
                                                 <h3>
-                                                    Create a nice theme
+                                                    ข้อมูลระบาดวิทยา
                                                     <small class="pull-right">40%</small>
                                                 </h3>
                                                 <div class="progress xs">
@@ -175,9 +154,9 @@ $avatar = getavatar($_SESSION[username]);
                                             </a>
                                         </li><!-- end task item -->
                                         <li><!-- Task item -->
-                                            <a href="#">
+                                            <a href="../maps/buffers.php">
                                                 <h3>
-                                                    Some task I need to do
+                                                    รัศมีจากหลังคาเรือน
                                                     <small class="pull-right">60%</small>
                                                 </h3>
                                                 <div class="progress xs">
@@ -188,9 +167,9 @@ $avatar = getavatar($_SESSION[username]);
                                             </a>
                                         </li><!-- end task item -->
                                         <li><!-- Task item -->
-                                            <a href="#">
+                                            <a href="../chart/chart_pyramid.php">
                                                 <h3>
-                                                    Make beautiful transitions
+                                                    ปิรามิดประชากร
                                                     <small class="pull-right">80%</small>
                                                 </h3>
                                                 <div class="progress xs">
@@ -203,7 +182,7 @@ $avatar = getavatar($_SESSION[username]);
                                     </ul>
                                 </li>
                                 <li class="footer">
-                                    <a href="#">View all tasks</a>
+                                    <a href="../main/index.php?page=boxmenu">View all Menu</a>
                                 </li>
                             </ul>
                         </li>
