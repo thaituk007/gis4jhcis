@@ -151,7 +151,7 @@
                                             <!-- checkbox -->
                                             <input type="checkbox" value="" name=""/>                                            
                                             <!-- todo text -->
-                                            <span class="text">ปรับหน้าหลักให้มี animation เพื่อความสวยงาน</span>
+                                            <span class="text">ปรับหน้าหลักให้มี animation เพื่อความสวยงาม</span>
                                             <!-- Emphasis label -->
                                             <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 hours</small>
                                             <!-- General tools such as edit or delete-->
